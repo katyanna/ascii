@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ascii</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>/asci/</h1>
+      </header>
+
+      <form method="post">
+        <label>
+          <div>Title</div>
+          <input  type="text" name="title" value="{{ title }}">
+        </label>
+
+        <br>
+
+        <label>
+          <div>Art</div>
+          <textarea name="art">{{art}}</textarea>
+        </label>
+
+        <br>
+
+        <div class="error">{{ error }}</div>
+
+        <input type="submit">
+      </form>
+
+      <br>
+
+      {% for art in arts %}
+      <div class="art">
+        <div class="art-title">{{ art.title }}</div>
+        <pre class="art-body">{{ art.art }}</pre>
+      </div>
+
+      <hr>
+      {% endfor %}
+    </div>
+  </body>
+</html>
